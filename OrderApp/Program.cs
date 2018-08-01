@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using OrderApp.Core;
 using OrderApp.Infra.Database.Sql;
+using OrderApp.Infra.Logger.ConsoleLogger;
 using OrderApp.Infra.Notification;
 using OrderApp.Infra.Payment;
 using OrderApp.Infra.Shipping;
@@ -38,11 +39,12 @@ namespace OrderApp
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<OrderRepository>().As<IOrderRepository>();
+            builder.RegisterType<SqlOrderRepository>().As<IOrderRepository>();
             builder.RegisterType<OrderService>().As<IOrderService>();
             builder.RegisterType<PaymentService>().As<IOrderPaymentService>();
             builder.RegisterType<ShippingService>().As<IOrderShippingService>();
             builder.RegisterType<NotificationService>().As<IOrderNotificationService>();
+            builder.RegisterType<ConsoleLogger>().As<ILogger>();
             builder.RegisterType<Controller>();
 
             return builder.Build();

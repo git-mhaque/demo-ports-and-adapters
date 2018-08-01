@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5BA675A-DC1E-4C8B-95AE-4894720C9B45}</ProjectGuid>
+    <ProjectGuid>{478D72BA-4003-4FFD-B0A5-6920879156A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrderApp.Infra.Shipping</RootNamespace>
-    <AssemblyName>OrderApp.Infra.Shipping</AssemblyName>
+    <RootNamespace>OrderApp.Infra.Logger.ConsoleLogger</RootNamespace>
+    <AssemblyName>OrderApp.Infra.Logger.ConsoleLogger</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,15 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ShippingService.cs" />
+    <Compile Include="ConsoleLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OrderApp.Core\OrderApp.Core.csproj">
-      <Project>{7d9cbffc-7528-4484-b1ba-4828519dcb46}</Project>
+      <Project>{7D9CBFFC-7528-4484-B1BA-4828519DCB46}</Project>
       <Name>OrderApp.Core</Name>
     </ProjectReference>
   </ItemGroup>

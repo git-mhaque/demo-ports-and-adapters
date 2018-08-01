@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace OrderApp.Core
+﻿namespace OrderApp.Core
 {
     public class OrderService: IOrderService
     {
@@ -8,22 +6,25 @@ namespace OrderApp.Core
         private readonly IOrderPaymentService _paymentService;
         private readonly IOrderShippingService _shippingService;
         private readonly IOrderNotificationService _notificationService;
+        private readonly ILogger _logger;
 
         public OrderService(
                 IOrderRepository orderRepository, 
                 IOrderPaymentService paymentService,
                 IOrderShippingService shippingService,
-                IOrderNotificationService notificationService)
+                IOrderNotificationService notificationService,
+                ILogger logger)
         {
             _orderRepository = orderRepository;
             _paymentService = paymentService;
             _shippingService = shippingService;
             _notificationService = notificationService;
+            _logger = logger;
         }
 
         public bool ProcessOrder(OrderDto order)
         {
-            Console.WriteLine($"[Core] Processing order # {order.OrderId} of {order.Amount} AUD");
+            _logger.LogMessage($"[Core] Processing order # {order.OrderId} of {order.Amount} AUD");
             
             order.Amount *= 1.10;
 

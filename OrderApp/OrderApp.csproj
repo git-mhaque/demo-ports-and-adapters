@@ -37,14 +37,7 @@
       <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -62,6 +55,10 @@
     <ProjectReference Include="..\OrderApp.Infra.Database.Sql\OrderApp.Infra.Database.Sql.csproj">
       <Project>{477877a7-48e8-4d14-b712-4f276b5db82f}</Project>
       <Name>OrderApp.Infra.Database.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrderApp.Infra.Logger.ConsoleLogger\OrderApp.Infra.Logger.ConsoleLogger.csproj">
+      <Project>{478d72ba-4003-4ffd-b0a5-6920879156a3}</Project>
+      <Name>OrderApp.Infra.Logger.ConsoleLogger</Name>
     </ProjectReference>
     <ProjectReference Include="..\OrderApp.Web\OrderApp.Web.csproj">
       <Project>{7302fed3-912a-473c-ad3f-75139cd14072}</Project>
